@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "django_addressable_menu"
+version = "0.1.0"
+description = "Тестовое задание для UpTrader. Django app, который будет реализовывать древовидное меню."
+authors = ["github.com/kingmob23"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.2"
+memory-profiler = "^0.58.0"
+sphinx = "^4.0.2"

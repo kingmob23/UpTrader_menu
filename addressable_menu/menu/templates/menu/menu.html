@@ -1,0 +1,21 @@
+{% for item, children in menu_items.items %}
+{% if item.parent is None %}
+<div>
+    <a href="{{ item.get_absolute_url }}" class="{% if item.active %}active{% endif %}">{{ item.title }}</a>
+    {% if children %}
+    <div>
+        {% for child in children %}
+        <a href="{{ child.get_absolute_url }}" class="{% if child.active %}active{% endif %}">{{ child.title }}</a>
+        {% if child.active and child.children.exists %}
+        <div>
+            {% for subchild in child.children.all %}
+            <a href="{{ subchild.get_absolute_url }}">{{ subchild.title }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+{% endfor %}
